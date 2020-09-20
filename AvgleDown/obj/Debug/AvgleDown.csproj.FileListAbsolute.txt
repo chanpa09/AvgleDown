@@ -7,3 +7,13 @@ C:\Users\chanp\source\repos\AvgleDown\AvgleDown\obj\Debug\AvgleDown.csproj.Gener
 C:\Users\chanp\source\repos\AvgleDown\AvgleDown\obj\Debug\AvgleDown.csproj.CoreCompileInputs.cache
 C:\Users\chanp\source\repos\AvgleDown\AvgleDown\obj\Debug\AvgleDown.exe
 C:\Users\chanp\source\repos\AvgleDown\AvgleDown\obj\Debug\AvgleDown.pdb
+C:\Users\chanp\Desktop\GitHub\AvgleDown\AvgleDown\bin\Debug\AvgleDown.exe.config
+C:\Users\chanp\Desktop\GitHub\AvgleDown\AvgleDown\bin\Debug\AvgleDown.exe
+C:\Users\chanp\Desktop\GitHub\AvgleDown\AvgleDown\bin\Debug\AvgleDown.pdb
+C:\Users\chanp\Desktop\GitHub\AvgleDown\AvgleDown\obj\Debug\AvgleDown.csprojAssemblyReference.cache
+C:\Users\chanp\Desktop\GitHub\AvgleDown\AvgleDown\obj\Debug\AvgleDown.Form1.resources
+C:\Users\chanp\Desktop\GitHub\AvgleDown\AvgleDown\obj\Debug\AvgleDown.Properties.Resources.resources
+C:\Users\chanp\Desktop\GitHub\AvgleDown\AvgleDown\obj\Debug\AvgleDown.csproj.GenerateResource.cache
+C:\Users\chanp\Desktop\GitHub\AvgleDown\AvgleDown\obj\Debug\AvgleDown.csproj.CoreCompileInputs.cache
+C:\Users\chanp\Desktop\GitHub\AvgleDown\AvgleDown\obj\Debug\AvgleDown.exe
+C:\Users\chanp\Desktop\GitHub\AvgleDown\AvgleDown\obj\Debug\AvgleDown.pdb
