@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AvgleDown
@@ -64,26 +65,25 @@ namespace AvgleDown
         {
             try
             {
-                WebClient wc = new WebClient();
+                using (WebClient wc = new WebClient())
+                {
+                    #region "set request head"
+                    wc.Headers.Add("accept: */*");
+                    wc.Headers.Add("accept-encoding: gzip, deflate, br");
+                    wc.Headers.Add("accept-language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6");
+                    wc.Headers.Add("origin: https://avgle.com");
+                    wc.Headers.Add("sec-fetch-dest: empty");
+                    wc.Headers.Add("sec-fetch-mode: cors");
+                    wc.Headers.Add("sec-fetch-site: cross-site");
+                    wc.Headers.Add("user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36");
+                    #endregion
 
-                #region "set request head"
-                // set head
-                wc.Headers.Add("accept: */*");
-                wc.Headers.Add("accept-encoding: gzip, deflate, br");
-                wc.Headers.Add("accept-language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6");
-                wc.Headers.Add("origin: https://avgle.com");
-                wc.Headers.Add("sec-fetch-dest: empty");
-                wc.Headers.Add("sec-fetch-mode: cors");
-                wc.Headers.Add("sec-fetch-site: cross-site");
-                wc.Headers.Add("user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36");
-                #endregion
-
-                string url = l_path + "/seg-" + i + "-v1-a1.ts";
-
-                string down = dir.FullName + @"\download" + string.Format("{0:D4}", i) + ".ts";
-                wc.DownloadFile(url, down);
+                    string url = l_path + "/seg-" + i + "-v1-a1.ts";
+                    string down = dir.FullName + @"\download" + string.Format("{0:D4}", i) + ".ts";
+                    wc.DownloadFile(url, down);
+                }
             }
-            catch(Exception err)
+            catch (Exception)
             {
                 throw;
             }
@@ -96,7 +96,10 @@ namespace AvgleDown
             try
             {
                 // make file
-                string[] inputFilePaths = Directory.GetFiles(dir.FullName, "download*.ts");
+                string[] inputFilePaths = Directory
+                    .GetFiles(dir.FullName, "download*.ts")
+                    .OrderBy(f => f)
+                    .ToArray();
                 using (var outputStream = File.Create(g_downPath.Text + @"\" + g_newName.Text + ".ts"))
                 {
                     foreach (var inputFilePath in inputFilePaths)
